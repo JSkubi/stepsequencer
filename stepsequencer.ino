@@ -10,7 +10,7 @@ boolean stepState[3][4] = {
   {false, false, false, false }
 };
 
-int midiNote[3] = {60, 64, 67};
+int midiNote[3] = {60, 67, 72};
 
 int tempo = 0;
 
@@ -89,7 +89,7 @@ void sequence() {
 
     for (int i = 0; i < 3; i++) {
       if (stepState[i][currentStep] == HIGH) {
-        usbMIDI.sendNoteOn(midiNote[i], 127, 1); //using curretnStep ebcuase it is soemthing that is alrady icrimenting, the note is now hardcoded
+        usbMIDI.sendNoteOn(midiNote[i], 75, 1); //using curretnStep ebcuase it is soemthing that is alrady icrimenting, the note is now hardcoded
       }
       else {
         usbMIDI.sendNoteOff(midiNote[i], 0, 1);
